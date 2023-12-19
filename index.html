@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pioneer-예술을 찾아서</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="solution-style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com"crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;600&family=Shizuru&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!--A+기원⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣶⣺⢮⣖⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣪⡷⡯⣟⡾⣇⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣻⡽⡽⣯⢯⣟⣗⣯⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣺⣳⣻⡽⡯⣟⣞⣷⣳⢯⡷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⢷⣻⠈⠁⠉⢉⠉⠈⠈⠈⣿⢽⡂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣯⠛⢀⡀⣀⡈⢁⣀⢀⡄⠫⣻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣗⢀⠈⠉⠁⠀⠀⠉⠁⠁⠀⣗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠼⣆⠀⠲⡤⡤⠖⠀⡴⠗⠗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⡴⢤⢤⢲⡚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠴⠚⠚⠚⠇⠀⠀⢸⣳⣳⣳⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡲⠃⠀⠀⠀⠀⠀⠀⠀⣺⣳⣻⣞⡯⠟⢵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⠀⢰⡂⠀⠀⠀⢀⣼⢽⢪⣗⡷⡇⠀⢈⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⢸⣢⡠⣤⢶⣻⠝⣡⢷⣳⣟⠇⡀⡀⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⢸⣳⢯⡯⣯⡴⣞⣯⣟⣗⡯⡇⠠ ⡡
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡀⠀⠀⠉⠉⠉⣗⠋⠙⡮⠊⠑⠙⠐⠁ ⢢
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⡤⡷⣦⣤⢤⣤⢤⡵⡦⣔⡯⡤⣤⢤⢤⣢⡾⣤⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡯⡿⣽⣍⠳⡯⣟⣎⠻⠽⡯⡯⠿⢙⡽⡽⡯⢓⡽⣽⢽⡽⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡽⡯⣗⣯⣗⡮⣍⡚⠟⠞⡶⡺⠺⢏⢋⣥⣳⡽⣽⢽⢯⡯⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⠤⠤⠤⠬⠯⠿⠽⢞⠾⢽⠳⠿⠽⡳⢗⠷⠯⠿⠽⢞⠷⡻⠽⠯⠯⢯⠥⡤⢤⠤⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    -->
+
+<!--헤더 시작-->
+
+  <header id="home" class="flex-column border-bottom py-3">
+    <div class="row  justify-content-between align-items-center">
+      
+      <h1 class="col-4 text-center fw-bold mb-5">
+        <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#home">pioneer</a>
+      </h1>
+
+      </div>
+    </div>
+  </header>
+ 
+
+   <!--헤더 끝-->
+   
+    <!--네비게이션 시작-->
+    <nav class="navbar navbar-expand-md bg-secondary bg-opacity-10 text-dark sticky-md-top">
+
+          <a class="gugi-font navbar-brand" href="#home">
+              <img src="images/logo.png" alt="pioneer">
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu"
+              aria-controls="nav-menu" aria-expanded="false" aria-label="메뉴">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse " id="nav-menu">
+              <ul class="navbar-nav nav-underline ms-auto my-2">
+                  <li class="nav-item"><a class="nav-link" href="myCarousel">News</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#artist">이달의 아티스트</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#exhibition">이달의 전시회</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#community">community</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#info">info</a></li>
+              </ul>
+          </div>
+  </nav>
+  <!--네비게이션 끝-->
+
+  <!--news-->
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/n1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h4>서울여대 현대미술 전공 졸업 전시</h4>
+          <p>11.22~12.02</p>
+          <p><a class="btn btn-lg btn-outline-light" href="https://www.instagram.com/swu_c.art/" target="_blank">more</a></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/n2.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h4>경복궁 낙서 테러 사건</h4>
+          <p>스프레이 낙서가 경복궁 담벼락에서 발견되다.</p>
+          <p><a class="btn btn-lg btn-outline-light" href="https://www.chosun.com/national/national_general/2023/12/18/MY62JBIQUFE6FAKMJ4SRJ4CLMI/" target="_blank">more</a></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/n3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h4>뱅크시의 진짜 이름</h4>
+          <p>신원 불명 그래피티 아티스트 뱅크시의 이름이 밝혀졌다.</p>
+          <p><a class="btn btn-lg btn-outline-light" href="https://hypebeast.kr/2023/11/banksy-says-his-real-name-in-interview-20-years-ago-2023" target="_blank">more</a></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/n4.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h4>올해의 터너상 수상자</h4>
+          <p>제시 달링(JESSE DARLING), 혁신적인 조각품을 기념하며 터너상(TURNER PRIZE) 수상</p>
+          <p><a class="btn btn-lg btn-outline-light" href="https://www.artmajeur.com/ko/magazine/2-ateu-nyuseu/jesi-dalling-jesse-darling-hyeogsinjeog-in-jogagpum-eul-ginyeomhamyeo-teoneosang-turner-prize-susang/334642" target="_blank">more</a></p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!--news-->
+
+   <!--이달의 아티스트-->
+   <section class="bg-body-tertiary overflow-hidden py-5" id="artist">
+<pre>
+
+</pre>
+    <div class="text-center py-5">
+        <h2 class="fw-bold">이달의 아티스트</h2>
+        <p class="lead text-muted">매달 pioneer에서 발견한 이달의 아티스트들을 소개해드립니다.</p>
+    </div>
+
+    <div class="card-group">
+      <div class="card border-light">
+        <img src="images/artist1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">전소정 작가</h5>
+          <p class="card-text">작가가 만든 동시다발적 이미지는 그가 꿈에서 보았던 불연속적인 대상들에서 비롯된 것이다. 한데 이들은 완전히 꿈 속의 것으로 머물지 않는다. 작가의 내밀한 꿈은 '비현실'이라는 둔탁한 문을 열고 나온다...</p>
+  
+              <button type="button" class="btn btn-outline-secondary px-4" data-bs-toggle="modal"
+              data-bs-target="#Modal1">
+              자세히 보기
+              </button>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 2023.12.03</small>
+        </div>
+      </div>
+  
+  
+      <div class="card border-light">
+        <img src="images/artist2.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">이신자 작가</h5>
+          <p class="card-text">한국 현대공예를 대표하는 1세대 섬유공예가이자
+            30여 년 후학을 길러온 교육자로서, 전시실 속 많은 관람객들의 찬사를 받으며
+            자근자근 이야기를 들려주는 그의 모습은 그가 그린 ‘실 그림’처럼 따뜻하고 아름다웠다...</p>
+          <button type="button" class="btn btn-outline-secondary px-4" data-bs-toggle="modal"
+          data-bs-target="#Modal2">
+          자세히 보기
+          </button>
+        </div>
+  
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 2023.12.05</small>
+        </div>
+      </div>
+  
+      <div class="card border-light">
+        <img src="images/artist3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">로스트에어</h5>
+          <p class="card-text">공간에 대한 뜻을 함께하는 4명의 여성 기획자로 구성된 콜렉티브. 전자 음악 파티를 통해 공간을 일시적으로 점유하는 활동을 지속하며
+            서로 다른 전문성을 기반으로 예술과 기술의 흥미로운 교차점을 찾고
+            하위문화 공동체의 확장가능성을 모색한다...</p>
+          <button type="button" class="btn btn-outline-secondary px-4" data-bs-toggle="modal"
+          data-bs-target="#Modal3">
+          자세히 보기
+          </button>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 2023.12.06</small>
+        </div>
+      </div>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="newsModalTitle"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content ">
+        <div class="modal-header">
+            <h3 class="modal-title fs-5" id="video1">전소정 작가</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="닫기"></button>
+        </div>
+        <div class="modal-body">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.mmca.go.kr/artResearch/newsLetterInfo.do?nlId=202312010000996"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Modal 끝 -->
+
+        <!-- Modal -->
+<div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="newsModalTitle"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content ">
+        <div class="modal-header">
+            <h3 class="modal-title fs-5" id="video2">이신자 작가</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="닫기"></button>
+        </div>
+        <div class="modal-body">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.mmca.go.kr/artResearch/newsLetterInfo.do?nlId=202311010000984"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Modal 끝 -->
+
+    <!-- Modal -->
+<div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="newsModalTitle"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content ">
+        <div class="modal-header">
+            <h3 class="modal-title fs-5" id="video3">로스트에어</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="닫기"></button>
+        </div>
+        <div class="modal-body">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.mmca.go.kr/artResearch/newsLetterInfo.do?nlId=202211150000848"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Modal 끝 -->
+<pre>
+
+
+
+
+
+</pre>
+</section>
+   <!--이달의 작가 끝-->
+
+   <!--이달의 전시-->
+   <section class="overflow-hidden py-5" id="exhibition">
+
+    <div class="text-center py-5">
+        <h2 class="fw-bold">이달의 전시회</h2>
+        <p class="lead text-muted">이번달 진행되는 전시회들을 알려드립니다.<br>클릭해서 해당 전시회들을 살펴보세요.</p>
+        
+    </div>
+
+    <div class="text-center fw-bold py-5">
+    <h2><a class="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="seoul.html" target="_blank">서울</a>
+    <a class="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="gyeonggi.html" target="_blank">경기</a>
+    <a class="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="busan.html" target="_blank">부산</a>
+    <a class="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="ex.html" target="_blank">기타</a>
+    </div></h2>
+
+    <div class="text-center fw-bold py-5"><h2>
+      <a class="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="free.html" target="_blank">무료 전시</a> <a class="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="child.html" target="_blank">어린이 전시</a>
+    </div></h2>
+
+    </section>
+   <!--이달의 전시 끝-->
+
+   <hr>
+
+   <!--community-->
+   <section class="overflow-hidden py-5" id="community">
+    <div class="text-center py-5">
+      <h1 class="fw-bold">Community</h1>
+      <p class="lead text-muted">전시에 대한 이야기를 나눠봐요.</p>
+  </div>
+
+  <div class="text-center">
+    <h6>회원가입시 열람할 수 있습니다.</h6>
+  </div>
+<table class="table table-hover table-striped text-center" style="border: 1px solid;">
+ <thead>
+   <tr>
+     <th>번호</th>
+     <th>제목</th>
+     <th>글쓴이</th>
+     <th>조회수</th>
+   </tr>
+  </thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>[질문]여러분 예술을 하게 된 계기가 뭔가요? 저는...</td>
+    <td>tbqslli99</td>
+    <td>117</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>[전시후기]애들 데리고 SPACE22</td>
+    <td>예술아는엄마</td>
+    <td>286</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>[연극후기]뮤지컬 레미제라블 보고왔어요...</td>
+    <td>mduck1184</td>
+    <td>198</td>
+  </tr>
+</tbody>
+
+</table>
+<pre>
+
+
+</pre>
+
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-outline-secondary" type="button"> <a class="link-offset-2 link-underline link-underline-opacity-0 link-body-emphasis" href="community.html" target="_blank">+더보기</button></a>
+    </div>
+   </section>
+   <!--community-->
+
+   <!--info-->
+   <section class="overflow-hidden py-5" id="info">
+    <div class="text-center py-5 text-white">
+      <h1 class="fw-bold">Info</h1>
+  </div>
+
+  <div class="col-lg-12 text-white text-center">
+    <p>pionner는 현 시대 가치있는 아티스트들을 발굴하고, 관람객들에게 전시에 대한 소통 환경을
+      <br>제공하고자 제작된 사이트입니다. pioneer에서는 매달 아티스트, 전시회에 대한 정보를 제공하며
+      <br>더 나아가 예술 소식지를 발간, 예술 커뮤니티를 제공합니다.
+      <br>여러분들이 pioneer를 통해 예술에 대해 자유롭게 소통하기를 희망합니다.
+    </p>
+    <pre>
+
+
+
+
+
+    </pre>
+      <div class="container text-center text-white">
+          <p>pioneer sns address</p>
+          <div class="d-flex justify-content-evenly px-5 mt-4 w-50 m-auto">
+              <a href="https://www.youtube.com/@art_for_you"
+                  class="btn btn-light rounded-pill btn-lg px-4"><i class="bi bi-youtube"></i></a>
+              <a href="https://www.mmca.go.kr/" class="btn btn-light rounded-pill btn-lg px-4"><i class="bi bi-bank2"></i></a>
+              <a href="https://www.instagram.com/cultureart4u/" class="btn btn-light rounded-pill btn-lg px-4"><i class="bi bi-instagram"></i></a>
+          </div>
+      </div>
+
+</div>
+
+
+
+   </section>
+   <!--info 끝-->
+
+   <h6>주소: 01797 서울특별시 노원구 화랑로 621 서울여자대학교 TEL 02-970-5114 FAX 02-3399-2843
+  <br>COPYRIGHT(C) SEOUL WOMEN’S UNIVERSITY's student 권영빈
+  <br>ALL RIGHTS RESERVED.
+  <br>대표: 2023111506 권영빈
+  </h6>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

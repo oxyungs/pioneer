@@ -1,0 +1,22 @@
+header{background-color: rgb(105, 127, 193);
+    background-size:cover;
+    background-position:center top;
+    background-attachment:fixed;}
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: rgb(105, 127, 193)!important;
+    }
+
+    body{font-family: 'Noto Sans KR', sans-serif;}
+    h1{font-family: 'Shizuru', sans-serif;} h2, h3, h4{font-family: 'Noto Sans KR', sans-serif;}
+
+    #info{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(images/museum1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment:fixed;
+    }
+
+table{margin : auto;
+  width : 65%;}
